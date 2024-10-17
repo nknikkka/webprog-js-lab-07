@@ -10,10 +10,13 @@ const allUser_s = [
     { name: "Sheree Anthony", friends: ["Goldie Gentry", "Briana Decker"], gender: "female" }
 ];
 
+// Сортуємо користувачів
 const sortedUsers = sortByDescendingFriendCount(allUser_s);
 
-const outputDiv2 = document.getElementById("outputDiv2");
-
-outputDiv2.innerHTML = sortedUsers
+// Формуємо текст для виводу через alert
+const alertMessage = sortedUsers
     .map(user => `${user.name} (Друзі: ${user.friends.length})`)
-    .join("<br>");
+    .join("\n");
+
+// Виводимо дані через alert
+alert(alertMessage);
