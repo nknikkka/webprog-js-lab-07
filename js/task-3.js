@@ -12,7 +12,6 @@ const users = [
     { name: "Sheree Anthony", friends: ["Goldie Gentry", "Briana Decker"], gender: "female" }
 ];
 
-
 const sortedUsers = sortByDescendingFriendCount(users);
 const outputDiv2 = document.getElementById("outputDiv2");
 
