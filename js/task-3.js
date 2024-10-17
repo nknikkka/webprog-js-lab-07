@@ -1,3 +1,7 @@
+const sortByDescendingFriendCount = (users) => {
+    return users.sort((a, b) => b.friends.length - a.friends.length);
+};
+
 const users = [
     { name: "Moore Hensley", friends: ["Sharron Pace"], gender: "male" },
     { name: "Sharlene Bush", friends: ["Briana Decker", "Sharron Pace"], gender: "female" },
@@ -5,14 +9,12 @@ const users = [
     { name: "Elma Head", friends: ["Goldie Gentry", "Aisha Tran"], gender: "female" },
     { name: "Carey Barr", friends: ["Jordan Sampson", "Eddie Strong"], gender: "male" },
     { name: "Blackburn Dotson", friends: ["Jacklyn Lucas", "Linda Chapman"], gender: "male" },
-    { name: "Sheree Anthony", friends: ["Goldie Gentry", "Briana Decker"], gender: "female" },
+    { name: "Sheree Anthony", friends: ["Goldie Gentry", "Briana Decker"], gender: "female" }
 ];
 
-const sortByDescendingFriendCount = (users) => {
-    return users.sort((a, b) => b.friends.length - a.friends.length);
-};
-
-const outputDiv2 = document.getElementById("outputDiv2");
 const sortedUsers = sortByDescendingFriendCount(users);
+const outputDiv2 = document.getElementById("outputDiv2");
 
-outputDiv2.innerHTML = `<pre>${JSON.stringify(sortedUsers, null, 2)}</pre>`;
+outputDiv2.innerHTML = sortedUsers
+    .map(user => `${user.name} (Друзі: ${user.friends.length})`)
+    .join("<br>");
