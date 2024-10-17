@@ -1,8 +1,6 @@
-const sortByDescendingFriendCount = (users) => {
-    return users.sort((a, b) => b.friends.length - a.friends.length);
-};
+const sortByDescendingFriendCount = users => users.sort((a, b) => b.friends.length - a.friends.length);
 
-const users = [
+const allUser_s = [
     { name: "Moore Hensley", friends: ["Sharron Pace"], gender: "male" },
     { name: "Sharlene Bush", friends: ["Briana Decker", "Sharron Pace"], gender: "female" },
     { name: "Ross Vazquez", friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"], gender: "male" },
@@ -12,7 +10,8 @@ const users = [
     { name: "Sheree Anthony", friends: ["Goldie Gentry", "Briana Decker"], gender: "female" }
 ];
 
-const sortedUsers = sortByDescendingFriendCount(users);
+const sortedUsers = sortByDescendingFriendCount(allUser_s);
+
 const outputDiv2 = document.getElementById("outputDiv2");
 
 outputDiv2.innerHTML = sortedUsers
